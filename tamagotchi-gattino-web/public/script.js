@@ -81,7 +81,21 @@ function statusText() {
 
 
 function decay(){
-  if(!cat.alive) return;
+  if(!cat.alive) {
+    alert("Il gattino è morto... 🐿 Rinascerà tra 20 secondi.");
+  setTimeout(() => {
+    localStorage.removeItem("cat"); // ← reset del localStorage
+    cat = {
+      hunger: 50,
+      happiness: 50,
+      energy: 50,
+      clean: 50,
+      alive: true
+    };
+    updateStats();
+  }, 20000); // 20 secondi  
+    return;
+  }
   cat.hunger+=5;
   cat.happiness-=3;
   cat.energy-=2;
