@@ -1,0 +1,13 @@
+{
+  "name": "tamagotchi-gattino-web",
+  "version": "1.0.0",
+  "description": "Tamagotchi Gattino - Web version (Node.js + Express)",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

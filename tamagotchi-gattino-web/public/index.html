@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tamagotchi Gattino 🐱</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Tamagotchi Gattino 🐾</h1>
+    <canvas id="catCanvas" width="300" height="300"></canvas>
+    <div id="stats">
+      <p>Fame: <span id="hunger"></span></p>
+      <p>Felicità: <span id="happiness"></span></p>
+      <p>Energia: <span id="energy"></span></p>
+      <p>Pulizia: <span id="clean"></span></p>
+    </div>
+    <div id="buttons">
+      <button onclick="feed()">🍗 Nutri</button>
+      <button onclick="play()">🎾 Gioca</button>
+      <button onclick="sleep()">😴 Dormi</button>
+      <button onclick="cleanCat()">🧼 Lava</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
