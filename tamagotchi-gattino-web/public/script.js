@@ -34,7 +34,7 @@ function drawCat() {
   ctx.moveTo(130, 80);
   ctx.lineTo(120, 40);
   ctx.lineTo(140, 60);
-  ctx.fillStyle = "#fff9f0";
+  ctx.fillStyle = "#221";
   ctx.fill();
 
   ctx.beginPath();
