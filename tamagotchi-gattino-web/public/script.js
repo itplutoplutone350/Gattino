@@ -86,8 +86,22 @@ function decay(){
   cat.happiness-=3;
   cat.energy-=2;
   cat.clean-=2;
-  if(cat.hunger>=100 || cat.happiness<=0 || cat.energy<=0) cat.alive=false;
-  updateStats();
+  if (cat.hunger >= 100 || cat.happiness <= 0 || cat.energy <= 0) {
+  cat.alive = false;
+  alert("Il gattino è morto... 🐿 Rinascerà tra 20 secondi.");
+  setTimeout(() => {
+    localStorage.removeItem("cat"); // ← reset del localStorage
+    cat = {
+      hunger: 50,
+      happiness: 50,
+      energy: 50,
+      clean: 50,
+      alive: true
+    };
+    updateStats();
+  }, 20000); // 20 secondi
+}
+updateStats();
 }
 
 function feed(){cat.hunger-=20;cat.happiness+=5;cat.clean-=5;updateStats();}
