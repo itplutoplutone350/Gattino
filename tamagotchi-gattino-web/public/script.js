@@ -79,6 +79,21 @@ function statusText() {
   return "Tutto ok!";
 }
 
-function feed() {
-  if (!cat.alive) return;
-  cat.hunger = Math.max
+
+function decay(){
+  if(!cat.alive) return;
+  cat.hunger+=5;
+  cat.happiness-=3;
+  cat.energy-=2;
+  cat.clean-=2;
+  if(cat.hunger>=100 || cat.happiness<=0 || cat.energy<=0) cat.alive=false;
+  updateStats();
+}
+
+function feed(){cat.hunger-=20;cat.happiness+=5;cat.clean-=5;updateStats();}
+function play(){cat.happiness+=15;cat.energy-=10;cat.hunger+=5;updateStats();}
+function sleep(){cat.energy+=25;cat.hunger+=10;updateStats();}
+function cleanCat(){cat.clean=100;cat.happiness-=5;updateStats();}
+
+setInterval(decay,5000);
+updateStats();
